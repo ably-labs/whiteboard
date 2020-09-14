@@ -1,10 +1,9 @@
-# Co-Draw
+# Interacive, multi-user whiteboard
 
 https://wonderful-grass-089d6bd03.azurestaticapps.net
 
-Through all ages of education, illustraition is an absolutely key part of human development. We teach toddlers how to draw, communicate ideas at university level with diagrams, and solve problems in business using these exact same skills. The foible of digital communication, and especially our increasingly distributed and remote world, is that it becomes difficult to use tools based in the physical world - like pen and paper, and drawing-boards - to communicate ideas when people aren't all in the same place.
 
-So in this demo, we're going to work through building a digital whiteboard, using HTML, JavaScript, and Ably Realtime messages. You'll have probably seen digital whiteboards before - they're often integrated into workplace collaboration software, and they can be tricky to get right.
+This demo will walk throught building a digital whiteboard, using HTML, JavaScript, and Ably Realtime messages. You'll have probably seen digital whiteboards before - they're often integrated into workplace collaboration software, and they can be tricky to get right.
 
 # What are we going to build?
 
