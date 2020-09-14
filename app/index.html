@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Co-Draw</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="/index.js" type="module"></script>
+</head>
+
+<body>
+    <div class="frame-top"></div>
+    <div class="frame-left"></div>
+    <div class="frame-right"></div>
+    <div class="frame-bottom"></div>
+    <section id="join" class="join hidden">
+        <h1>Join a Whiteboard</h1>
+        <form id="joinForm" class="join-form">
+            <label for="boardName">Enter a board name: </label>
+            <input id="boardName" name="boardName" type="text" />
+            <button id="joinBtn" type="submit">Join board</button>
+        </form>
+    </section>
+
+    <div id="activeBoard" class="hidden board-holder">
+
+        <canvas id="draw" data-background="lined"></canvas>
+        <ul id="paletteId" class="palette">
+            <li class="pen" id="black" data-color="black"></li>
+            <li class="pen" id="green" data-color="green"></li>
+            <li class="pen" id="blue" data-color="blue"></li>
+            <li class="pen" id="red" data-color="red"></li>
+            <li class="eraser" id="white" data-color="transparent" data-thickness="15"></li>
+        </ul>
+        <ul id="backgrounds" class="backgrounds">
+            <li class="users">
+                <span class="users-icon"></span>
+                <span class="users-number" id="memberCount"></span>
+            </li>
+            <li class="blank background" id="blank" data-bg="blank"></li>
+            <li class="lined background" id="lined" data-bg="lined"></li>
+            <li class="squared background" id="squared" data-bg="squared"></li>
+            <li class="dotted background" id="dotted" data-bg="dotted"></li>
+            <li class="graph background" id="graph" data-bg="graph"></li>
+        </ul>
+    </div>
+</body>
+
+</html>
