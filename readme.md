@@ -1,4 +1,4 @@
-# Interacive, multi-user whiteboard
+# Interactive, multi-user whiteboard
 
 https://wonderful-grass-089d6bd03.azurestaticapps.net
 
