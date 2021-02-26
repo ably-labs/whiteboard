@@ -4,6 +4,15 @@ import Ably from 'ably/promises';
 async function updateActiveCount(channel) {
     const members = await channel.presence.get();
     document.getElementById("memberCount").innerHTML = members.length;
+   // console.log(members);
+     members.forEach(function(val, i){
+        console.log(val.connectionId);
+        const newDiv = document.createElement("div");
+        newDiv.innerHTML = val.connectionId;
+        newDiv.id = val.connectionId;
+        newDiv.className = "cursor";
+        document.getElementById("cursors").appendChild(newDiv);
+     })
 }
 
 async function joinBoard(boardId) {
@@ -13,6 +22,7 @@ async function joinBoard(boardId) {
 
     const ably = new Ably.Realtime.Promise({ authUrl: '/api/createTokenRequest' });
     const channel = ably.channels.get(`whiteboard-${boardId}`);
+    const mouseChannel = ably.channels.get(`whiteboard-mouse-${boardId}`);
 
     await channel.subscribe((message) => {
         if (message.name === "setBackground") {
@@ -25,6 +35,14 @@ async function joinBoard(boardId) {
         }
     });
 
+    await mouseChannel.subscribe((message) => {
+        console.log(message.connectionId);
+        let cursor = document.getElementById(message.connectionId);
+        console.log(message.data);
+        cursor.style.transform = `translate(${message.data[0]}px, ${message.data[1]}px)`;
+    
+    })
+
     canvas.onNotification((evt) => {
         channel.publish({ name: "drawing", data: evt });
     });
@@ -33,8 +51,12 @@ async function joinBoard(boardId) {
     channel.presence.subscribe('leave', async () => { updateActiveCount(channel); });
     channel.presence.enter();
 
-    return { canvas, channel };
+    return { canvas, channel, mouseChannel };
 };
+
+async function getMousePos(e) {
+    return { x:e.clientX, y:e.clientY };
+}
 
 (async function () {
     const urlParams = new URLSearchParams(location.search);
@@ -55,4 +77,10 @@ async function joinBoard(boardId) {
             state.channel.publish({ name: "setBackground", data: event.target.dataset["bg"] });
         });
     }
+
+    document.onmousemove = async function(e) {
+        let mousecoords = await getMousePos(e);
+        state.mouseChannel.publish({ name: "mouse", data: [mousecoords.x, mousecoords.y] });
+    };
+    
 })();

@@ -247,3 +247,29 @@ h1 {
     font-size: 1.5em;
     font-weight: bold;
 }
+
+.cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    border-radius: 50%;
+}
+
+.cursor:nth-child(1) {
+    background: tomato;
+}
+
+.cursor:nth-child(2) {
+    background: magenta;
+}
+
+.cursor:nth-child(3) {
+    background: cornflowerblue;
+}
+
+.cursor:nth-child(4) {
+    background: turquoise;
+}
