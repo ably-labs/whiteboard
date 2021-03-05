@@ -274,8 +274,9 @@ h1 {
 
 .powered {
     position: absolute;
-    top: 0;
+    top: 10px;
     left: 50%;
+    transform: translate(-50%, 0);
     display: flex;
     justify-content: center;
     align-items: center;
