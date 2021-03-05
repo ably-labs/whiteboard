@@ -1,7 +1,6 @@
 # Interactive, multi-user whiteboard
 
-https://wonderful-grass-089d6bd03.azurestaticapps.net
-
+https://whiteboard.ably.dev/
 
 This demo will walk throught building a digital whiteboard, using HTML, JavaScript, and Ably Realtime messages. You'll have probably seen digital whiteboards before - they're often integrated into workplace collaboration software, and they can be tricky to get right.
 
