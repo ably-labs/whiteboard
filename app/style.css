@@ -13,7 +13,7 @@ body {
     overflow: hidden;
     background-color: #f1c40f;
     color: #111;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Permanent Marker', cursive;
 }
 
 h1 {
@@ -31,6 +31,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .join-form {
@@ -69,12 +70,12 @@ h1 {
     border: 0;
     font-size: 1.1em;
     color: white;
-    background-color: #1abc9c;
+    background: linear-gradient(217deg, rgba(228,0,0,1) 0%, rgba(255,84,22,1) 47%);
     cursor: pointer;
 }
 
 .join-form button:hover {
-    background-color: #16a085;
+    background: linear-gradient(217deg, rgba(228,0,0,1) 0%, rgba(255,84,22,1) 79%);
 }
 
 .board-holder {
@@ -108,7 +109,7 @@ h1 {
     list-style: none;
     width: 30px;
     height: 80px;
-    margin: 0 20px;
+    margin: 0 10px;
     background-color: black;
     transform: translateY(20px);
     transition: all 0.1s ease-in-out;
@@ -185,6 +186,7 @@ h1 {
 }
 
 .backgrounds {
+    margin-top: 0;
     margin-bottom: 100px;
 }
 
@@ -240,10 +242,54 @@ h1 {
     border: 4px solid white;
     list-style: none;
     background: url(./avatar.png) center bottom no-repeat;
-    background-size: 60px;
+    background-size: 78px;
 }
 
 .users-number {
     font-size: 1.5em;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.github {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    margin: 20px;
+    padding-left: 55px;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: #03020D;
+    background: url(./github.svg) no-repeat left;
+    background-size: 45px;
+}
+
+.github:hover {
+    color: #FF5416
+}
+
+.powered {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.ably {
+    width: 130px;
+    height: 50px;
+    display: inline-block;
+    margin-left: 20px;
+    background: url(./ably.svg) no-repeat center center;
+    background-size: 130px;
+    color: transparent;
+
 }
