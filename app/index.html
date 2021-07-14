@@ -10,25 +10,18 @@
 </head>
 
 <body>
+    <h1>Interactive Whiteboard</h1>
     <section id="join" class="join hidden">
-        <h1>Join a Whiteboard</h1>
         <form id="joinForm" class="join-form">
             <label for="boardName">Enter a board name: </label>
             <input id="boardName" name="boardName" type="text" />
             <button id="joinBtn" type="submit">Join board</button>
         </form>
     </section>
-
+    
     <div id="activeBoard" class="hidden board-holder">
-        <h1 class="powered">Whiteboard - Powered by <a href="https://ably.com/" class="ably">Ably</a></h1>
+        
         <canvas id="draw" data-background="lined"></canvas>
-        <ul id="paletteId" class="palette">
-            <li class="pen" id="black" data-color="black"></li>
-            <li class="pen" id="green" data-color="green"></li>
-            <li class="pen" id="blue" data-color="blue"></li>
-            <li class="pen" id="red" data-color="red"></li>
-            <li class="eraser" id="white" data-color="transparent" data-thickness="15"></li>
-        </ul>
         <ul id="backgrounds" class="backgrounds">
             <li class="users">
                 <span class="users-icon"></span>
@@ -40,7 +33,15 @@
             <li class="dotted background" id="dotted" data-bg="dotted"></li>
             <li class="graph background" id="graph" data-bg="graph"></li>
         </ul>
+        <ul id="paletteId" class="palette">
+            <li class="pen" id="black" data-color="black"></li>
+            <li class="pen" id="green" data-color="green"></li>
+            <li class="pen" id="blue" data-color="blue"></li>
+            <li class="pen" id="red" data-color="red"></li>
+            <li class="eraser" id="white" data-color="transparent" data-thickness="15"></li>
+        </ul>
     </div>
+    <h2 class="powered">Powered by <a href="https://ably.com/" class="ably">Ably</a></h2>
 </body>
 
 </html>

@@ -4,11 +4,22 @@
     --md-grey: #DBDBDC;
     --dk-grey: #76767C;
     --charcoal: #292831;
+    --orange: #ff5416;
     --cyan: #4AF7FF;
     --green: #08FF13;
     --red: #FF2739;
     --pink: #FF17D2;
 }
+
+@font-face {
+    font-family: "Next Book";
+    src: url("NEXT-Book-Medium.eot");
+    src: url("NEXT-Book-Medium.eot?#iefix") format("embedded-opentype"),
+      url("NEXT-Book-Medium.woff2") format("woff2"),
+      url("NEXT-Book-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
 
 html {
     box-sizing: border-box;
@@ -18,39 +29,40 @@ html {
     box-sizing: inherit;
 }
 body {
+    display: grid;
+    grid-template-rows: calc(6vw + 20px) auto 70px;
+    place-items: center;
     height: 100vh;
     width: 100vw;
     margin: 0;
     overflow: hidden;
-    background-color: var(--charcoal);
+    background-color: var(--black);
     color: white;
-    font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Next Book', Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 h1 {
     width: 100%;
-    margin: 0 0 30px;
-    font-size: 6vw;
-    font-family: 'Nanum Pen Script', cursive;
+    margin-bottom: 0;
+    font-size: clamp(2rem, 8vw, 100px);
     text-align: center;
     flex-shrink: 0;
+    font-family: 'Nanum Pen Script', cursive;
 }
 
 .join {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .join-form {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
     width: 50%;
     max-width: 600px;
     min-width: 320px;
@@ -59,80 +71,101 @@ h1 {
 
 .join-form label {
     width: 100%;
-    font-size: 1.4em;
-    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 2em;
 }
 
 .join-form input {
-    width: 70%;
-    padding: 15px;
-    border-radius: 5px;
-    border: 0;
-    font-size: 1.1em;
-    text-align: center;
-    letter-spacing: 2px;
-    color: #555;
-    box-shadow: inset 0px 1px 2px 1px rgba(0,0,0,0.4);
+    width: calc(80% - 20px);
+    background-color: var(--lt-grey);
+    border-color: var(---md-grey);
+    border-radius: .375rem;
+    border-width: 1px;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.45;
+    line-height: 1;
+    padding: .8125rem 1rem .75rem;
+    transition-property: background-color,box-shadow;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
+}
+
+.join-form input:focus, .join-form input:hover {
+    background-color: #fff;
+    border-color: transparent;
+    --tw-shadow: 0px 0px 8px 0px #0867c4;
+    box-shadow: 0 0 transparent,0 0 transparent,var(--tw-shadow);
+    box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
 }
 
 .join-form button {
-    padding: 15px;
-    border-radius: 5px;
+    padding: .9375rem 1.5rem;
     border: 0;
-    font-size: 1.1em;
-    color: white;
-    background: linear-gradient(217deg, rgba(228,0,0,1) 0%, rgba(255,84,22,1) 47%);
+    border-radius: .375rem;
+    font-family: 'Next Book' ,Arial,Helvetica,sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.125;
+    background-color: #fff;
+    color: var(--black);
+    transition-property: background-color,border-color,color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
     cursor: pointer;
 }
 
 .join-form button:hover {
-    background: linear-gradient(217deg, rgba(228,0,0,1) 0%, rgba(255,84,22,1) 79%);
+    background: var(--orange);
 }
 
 .board-holder {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1024px 124px;
+    grid-template-rows: 720px auto;
+    place-items: center;
 }
 
 #draw {
     display: block;
     touch-action: none;
     background-color: white;
+    border-radius: .5rem;
 }
 
 .palette {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    width: 100%;
     display: flex;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
+    align-self: flex-start;
 }
 
 .pen, .eraser {
     display: block;
     list-style: none;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     margin: 0 10px;
-    border: 1px solid white;
-    outline: 1px solid black;
+    border: 1px solid black;
+    outline: 1px solid var(--orange);
     background-color: black;
 }
 
+.pen:hover, .eraser:hover {
+    outline: 1px solid white;
+}
+
 #red {
-    background-color: red;
+    background-color: var(--red);
 }
 #green {
-    background-color: green;
+    background-color: var(--green);
 }
 #blue {
-    background-color: blue;
+    background-color: var(--cyan);
 }
 #black {
-    background-color: black;
+    background-color: var(--charcoal);
 }
 
 .eraser {
@@ -155,8 +188,8 @@ h1 {
 }
 
 .backgrounds {
-    margin-top: 0;
-    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
 }
 
 .background {
@@ -164,18 +197,17 @@ h1 {
     width: 80px;
     height: 80px;
     margin: 20px 0;
+    border: 1px solid var(--black);
     border-radius: 50%;
-    border: 5px solid #e0e0e0;
     list-style: none;
     cursor: pointer;
     background-color: white;
     background-position: center;
-    box-shadow: 0px 0px 0px 2px #cacbcc,
-                inset 0px 0px 0px 2px #cacbcc;
+    box-shadow: 0px 0px 0px 1.5px var(--orange);
 }
 
 .background:hover {
-    border: 5px solid #ccc;
+    box-shadow: 0px 0px 0px 1.5px white;
 }
 
 .lined,
@@ -217,7 +249,6 @@ h1 {
 .users-number {
     font-size: 1.5em;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .github {
@@ -243,14 +274,15 @@ h1 {
 
 .powered {
     position: absolute;
-    top: 10px;
+    bottom: 10px;
     left: 50%;
     transform: translate(-50%, 0);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.4rem;
+    font-weight: normal;
 }
 
 .ably {
@@ -261,5 +293,4 @@ h1 {
     background: url(./ably.svg) no-repeat center center;
     background-size: 130px;
     color: transparent;
-
 }
