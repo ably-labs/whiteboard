@@ -1,3 +1,14 @@
+:root {
+    --black: #03020D;
+    --lt-grey: #F5F5F6;
+    --md-grey: #DBDBDC;
+    --dk-grey: #76767C;
+    --charcoal: #292831;
+    --cyan: #4AF7FF;
+    --green: #08FF13;
+    --red: #FF2739;
+    --pink: #FF17D2;
+}
 
 html {
     box-sizing: border-box;
@@ -11,16 +22,16 @@ body {
     width: 100vw;
     margin: 0;
     overflow: hidden;
-    background-color: #f1c40f;
-    color: #111;
-    font-family: 'Permanent Marker', cursive;
+    background-color: var(--charcoal);
+    color: white;
+    font-family: 'Nanum Pen Script', cursive;
 }
 
 h1 {
     width: 100%;
     margin: 0 0 30px;
     font-size: 6vw;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Nanum Pen Script', cursive;
     text-align: center;
     flex-shrink: 0;
 }
@@ -89,57 +100,26 @@ h1 {
     display: block;
     touch-action: none;
     background-color: white;
-    border: 30px solid;
-    border-image: url(border.png) 40 round;
-
 }
 
 .palette {
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
     display: flex;
     margin: 0;
     padding: 0;
 }
 
-.pen {
-    position: relative;
+.pen, .eraser {
     display: block;
     list-style: none;
-    width: 30px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     margin: 0 10px;
+    border: 1px solid white;
+    outline: 1px solid black;
     background-color: black;
-    transform: translateY(20px);
-    transition: all 0.1s ease-in-out;
-    border-top: 5px solid #ddd;
-    box-shadow: inset -10px 0 5px 0 rgba(0,0,0,0.3),
-                inset 10px 0 5px 0 rgba(255,255,255,0.4);
-}
-
-.pen:before {
-    content: "";
-    position: absolute;
-    top: -26px;
-    left: 2px;
-    width: 0;
-    height: 0;
-    border-left: 13px solid transparent;
-    border-right: 13px solid transparent;
-    border-bottom: 26px solid #ddd;
-}
-
-.pen:after {
-    content: "";
-    position: absolute;
-    top: -26px;
-    left: 50%;
-    width: 8px;
-    height: 8px;
-    transform: translatex(-50%);
-    background-color: inherit;
-    border-top-right-radius: 50%;
 }
 
 #red {
@@ -156,18 +136,7 @@ h1 {
 }
 
 .eraser {
-    position: relative;
-    display: block;
-    list-style: none;
-    width: 40px;
-    height: 80px;
-    margin: 0 20px;
-    border-radius: 5px;
     background-color: white;
-    transform: translateY(20px);
-    transition: all 0.1s ease-in-out;
-    box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255,255,255,0.5), 
-                inset -0.2em -0.2em 0.2em 0 rgba(0,0,0,0.5);
 }
 
 .pen:hover,
