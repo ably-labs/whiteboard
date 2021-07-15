@@ -53,6 +53,8 @@ async function joinBoard(boardId) {
     for (let bg of backgrounds.children) {
         bg.addEventListener('click', (event) => {
             state.channel.publish({ name: "setBackground", data: event.target.dataset["bg"] });
+            document.querySelectorAll(".active-bg")[0].classList.remove("active-bg")
+            event.target.classList.add("active-bg");
         });
     }
 })();

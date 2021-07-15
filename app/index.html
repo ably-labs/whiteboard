@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Co-Draw</title>
+    <title>Sharable Interactive Whiteboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css">
@@ -21,13 +20,13 @@
     
     <div id="activeBoard" class="hidden board-holder">
         
-        <canvas id="draw" data-background="lined"></canvas>
+        <canvas id="draw" data-background="blank"></canvas>
         <ul id="backgrounds" class="backgrounds">
             <li class="users">
                 <span class="users-icon"></span>
                 <span class="users-number" id="memberCount"></span>
             </li>
-            <li class="blank background" id="blank" data-bg="blank"></li>
+            <li class="blank background active-bg" id="blank" data-bg="blank"></li>
             <li class="lined background" id="lined" data-bg="lined"></li>
             <li class="squared background" id="squared" data-bg="squared"></li>
             <li class="dotted background" id="dotted" data-bg="dotted"></li>
