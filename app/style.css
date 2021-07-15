@@ -121,7 +121,12 @@ h1 {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-self: flex-start;
+    align-items: center;
+}
+
+.pen-title {
+    margin-right: 20px;
+    list-style: none;
 }
 
 .pen, .eraser {
@@ -162,8 +167,7 @@ h1 {
 [data-selected="green"] #green, 
 [data-selected="blue"] #blue,
 [data-selected="white"] .eraser {
-    cursor: pointer;
-    transform: translateY(0);
+    outline: 1px solid white;
 }
 
 .hidden {
@@ -173,13 +177,21 @@ h1 {
 .backgrounds {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+    height: 100%;
+}
+
+.background-title {
+    list-style: none;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .background {
     display: block;
     width: 80px;
     height: 80px;
-    margin: 20px 0;
     border: 1px solid var(--black);
     border-radius: 50%;
     list-style: none;
@@ -220,7 +232,7 @@ h1 {
 .users-icon {
     display: block;
     width: 80px;
-    height: 80px;
+    height: 70px;
     margin: 20px 0 0;
     list-style: none;
     background: url(./avatar.png) center no-repeat;
