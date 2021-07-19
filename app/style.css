@@ -118,7 +118,7 @@ h1 {
 .board-holder {
     display: grid;
     grid-template-columns: 1024px 124px;
-    grid-template-rows: 720px auto;
+    grid-template-rows: max-content auto;
     place-items: center;
 }
 
@@ -189,8 +189,10 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: space-between;
-    height: 100%;
+    height: 670PX;
+    grid-row: span 2;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
 .background-title {
@@ -243,14 +245,15 @@ h1 {
 .users-icon {
     display: block;
     width: 80px;
-    height: 70px;
-    margin: 20px 0 0;
+    height: 60px;
+    margin: 0 0;
     list-style: none;
     background: url(./avatar.png) center no-repeat;
     background-size: 60px;
 }
 
 .users-number {
+    margin-top: -24px;
     font-size: 1.5em;
     font-weight: bold;
 }
