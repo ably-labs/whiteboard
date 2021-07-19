@@ -30,7 +30,7 @@ html {
 }
 body {
     display: grid;
-    grid-template-rows: 100px auto 70px;
+    grid-template-rows: 90px 1fr;
     place-items: center;
     height: 100vh;
     width: 100vw;
@@ -43,8 +43,12 @@ body {
 }
 
 h1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    margin: 20px 0 0;
+    margin: 0;
+    padding: 0px 20px 0;
     line-height: 1em;
     font-size: clamp(2rem, 6vw, 100px);
     text-align: center;
@@ -273,12 +277,7 @@ h1 {
 }
 
 .powered {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
     display: flex;
-    justify-content: center;
     align-items: center;
     margin: 0;
     font-size: 1.4rem;
