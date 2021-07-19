@@ -43,6 +43,7 @@ async function joinBoard(boardId) {
     if (!boardName) {
         document.getElementById("boardName").value = "1234";
         document.getElementById("join").classList.remove("hidden");
+        document.getElementById("rings").classList.add("rings");
         return;
     }
 

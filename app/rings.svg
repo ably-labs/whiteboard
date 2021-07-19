@@ -1,0 +1,94 @@
+<svg width="312" height="312" viewBox="0 0 312 312"  fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style type="text/css">
+
+		@keyframes pulse {
+				from {
+					transform: scale(0.5, 0.5);
+				}
+
+				40% {
+					transform: scale(0.6, 0.6);
+				}
+
+				to {
+					transform: scale(0.6, 0.6);
+				}
+			}
+
+			@keyframes pulse1 {
+				from {
+					transform: scale(0.5, 0.5);
+				}
+
+				40% {
+					transform: scale(0.7, 0.7);
+				}
+
+				to {
+					transform: scale(0.5, 0.5);
+				}
+			}
+
+			@keyframes pulse2 {
+				from {
+					transform: scale(0.5, 0.5);
+				}
+
+				40% {
+					transform: scale(0.85, 0.85);
+				}
+
+				to {
+					transform: scale(0.5, 0.5);
+				}
+			}
+
+			@keyframes pulse3 {
+				from {
+					transform: scale(0.5, 0.5);
+				}
+
+				40% {
+					transform: scale(1, 1);
+				}
+
+				to {
+					transform: scale(0.5, 0.5);
+				}
+			}
+
+			.pulse {
+				animation: pulse 10s infinite ease-in-out;
+				transform-origin: center;
+			}
+
+			.pulse1 {
+				animation: pulse1 10s infinite ease-in-out;
+				transform-origin: center;
+			}
+
+			.pulse2 {
+				animation: pulse2 10s infinite ease-in-out;
+				transform-origin: center;
+			}
+			
+			.pulse3 {
+				animation: pulse3 10s infinite ease-in-out;
+				transform-origin: center;
+			}
+
+	</style>
+	<path class="pulse" d="M156 203.662C182.323 203.662 203.663 182.323 203.663 156C203.663 129.677 182.323 108.337 156 108.337C129.677 108.337 108.338 129.677 108.338 156C108.338 182.323 129.677 203.662 156 203.662Z" stroke="url(#paint_linear)" stroke-width="2" stroke-miterlimit="10" />
+	<path class="pulse1" d="M156 239.312C202.012 239.312 239.313 202.012 239.313 156C239.313 109.988 202.012 72.6875 156 72.6875C109.988 72.6875 72.6876 109.988 72.6876 156C72.6876 202.012 109.988 239.312 156 239.312Z" stroke="url(#paint_linear)" stroke-width="2" stroke-miterlimit="10" />
+	<path class="pulse2" d="M156 274.963C221.701 274.963 274.963 221.701 274.963 156C274.963 90.2989 221.701 37.0376 156 37.0376C90.2989 37.0376 37.0376 90.2989 37.0376 156C37.0376 221.701 90.2989 274.963 156 274.963Z" stroke="url(#paint_linear)" stroke-width="2" stroke-miterlimit="10" />
+	<path class="pulse3" d="M156 311C241.604 311 311 241.604 311 156C311 70.3959 241.604 1 156 1C70.3959 1 1 70.3959 1 156C1 241.604 70.3959 311 156 311Z" stroke="url(#paint_linear)" stroke-width="2" stroke-miterlimit="10" />
+	<defs>
+		<linearGradient id="paint_linear" x1="105.433" y1="156.025" x2="206.617" y2="156.025" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#FF5416" />
+			<stop offset="0.1871" stop-color="#FF4C14" />
+			<stop offset="0.4706" stop-color="#FF380F" />
+			<stop offset="0.8136" stop-color="#FF1606" />
+			<stop offset="1" stop-color="#FF0000" />
+		</linearGradient>
+	</defs>
+</svg>

@@ -30,7 +30,7 @@ html {
 }
 body {
     display: grid;
-    grid-template-rows: calc(6vw + 20px) auto 70px;
+    grid-template-rows: 100px auto 70px;
     place-items: center;
     height: 100vh;
     width: 100vw;
@@ -44,19 +44,27 @@ body {
 
 h1 {
     width: 100%;
-    margin: 0;
-    font-size: clamp(2rem, 8vw, 100px);
+    margin: 20px 0 0;
+    line-height: 1em;
+    font-size: clamp(2rem, 6vw, 100px);
     text-align: center;
     flex-shrink: 0;
     font-family: 'Nanum Pen Script', cursive;
 }
 
 .join-form {
+    position: relative;
     max-width: 600px;
     min-width: 320px;
     padding: 40px;
     color: var(--black);
     background-color: white;
+    z-index: 2;
+}
+
+.rings {
+    background: url('rings.svg') var(--black) no-repeat calc(50% + 200px) calc(50% - 50px);
+    background-size: 60%;
 }
 
 .join-form label {
@@ -144,17 +152,20 @@ h1 {
     outline: 1px solid white;
 }
 
+#pink {
+    background-color: var(--pink);
+}
 #red {
-    background-color: red;
+    background-color: var(--red);
 }
 #green {
-    background-color: green;
+    background-color: var(--green);
 }
 #blue {
-    background-color: blue;
+    background-color: var(--cyan);
 }
 #black {
-    background-color: black;
+    background-color: var(--charcoal);
 }
 .eraser {
     background-color: white;
@@ -162,11 +173,7 @@ h1 {
 
 .pen:hover,
 .eraser:hover, 
-[data-selected="black"] #black,
-[data-selected="red"] #red, 
-[data-selected="green"] #green, 
-[data-selected="blue"] #blue,
-[data-selected="white"] .eraser {
+[data-active="true"] {
     outline: 1px solid white;
 }
 

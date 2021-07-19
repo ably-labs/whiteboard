@@ -8,7 +8,7 @@
     <script src="/index.js" type="module"></script>
 </head>
 
-<body>
+<body class="" id="rings">
     <h1>Interactive Whiteboard</h1>
     <section id="join" class="join hidden">
         <form id="joinForm" class="join-form">
@@ -33,12 +33,13 @@
             <li class="dotted background" id="dotted" data-bg="dotted"></li>
             <li class="graph background" id="graph" data-bg="graph"></li>
         </ul>
-        <ul id="paletteId" class="palette" data-selected="black">
+        <ul id="paletteId" class="palette" data-selected="#292831">
             <li class="pen-title">Pen colour:</li>
-            <li class="pen" id="black" data-color="black"></li>
-            <li class="pen" id="green" data-color="green"></li>
-            <li class="pen" id="blue" data-color="blue"></li>
-            <li class="pen" id="red" data-color="red"></li>
+            <li class="pen" id="black" data-color="#292831" data-active="true"></li>
+            <li class="pen" id="red" data-color="#FF2739"></li>
+            <li class="pen" id="pink" data-color="#FF17D2"></li>
+            <li class="pen" id="blue" data-color="#4AF7FF"></li>
+            <li class="pen" id="green" data-color="#08FF13"></li>
             <li class="eraser" id="white" data-color="transparent" data-thickness="15"></li>
         </ul>
     </div>
