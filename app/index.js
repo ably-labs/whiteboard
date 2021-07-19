@@ -8,7 +8,7 @@ async function updateActiveCount(channel) {
 
 async function joinBoard(boardId) {
     const canvas = new DrawableCanvasElement("draw");
-    canvas.setSize(1024, 720);
+    canvas.setSize(1024, 600);
     canvas.registerPaletteElements("paletteId");
 
     const ably = new Ably.Realtime.Promise({ authUrl: '/api/createTokenRequest' });
